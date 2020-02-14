@@ -13,12 +13,17 @@ class HomeTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]()
     var numTweet: Int!
     
+    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweet()
+        //(target, what do u want us to do,
+        myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
     }
     
-    func loadTweet() {
+    @objc func loadTweet() {
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": 15]
         
@@ -29,6 +34,9 @@ class HomeTableViewController: UITableViewController {
                 self.tweetArray.append(tweet)
             }
             self.tableView.reloadData()
+            //after reload, we want to stop refreshing
+            self.myRefreshControl.endRefreshing()
+            
         }, failure: { (Error) in
             print("Could not load tweets!")
         })
