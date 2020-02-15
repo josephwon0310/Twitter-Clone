@@ -78,6 +78,9 @@
                                                 <constraint firstAttribute="height" constant="30" id="9oj-Ur-CGk"/>
                                             </constraints>
                                             <state key="normal" image="retweet-icon"/>
+                                            <connections>
+                                                <action selector="retweet:" destination="Ui9-P6-qom" eventType="touchUpInside" id="IfN-xE-4hx"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olw-uk-4uL" userLabel="favButton">
                                             <rect key="frame" x="354" y="109" width="30" height="30"/>
@@ -86,6 +89,9 @@
                                                 <constraint firstAttribute="height" constant="30" id="vYI-f0-OXj"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="favor-icon"/>
+                                            <connections>
+                                                <action selector="favoriteTweet:" destination="Ui9-P6-qom" eventType="touchUpInside" id="VQf-wl-oSp"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7We-FT-Hj2">
                                             <rect key="frame" x="93" y="37" width="301" height="66"/>
@@ -112,7 +118,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favButton" destination="Olw-uk-4uL" id="xkh-KG-Csk"/>
                                     <outlet property="profileImageView" destination="5mK-A3-Qku" id="V3B-cs-eIp"/>
+                                    <outlet property="retButton" destination="5DA-Ha-e8K" id="C5g-iz-PFO"/>
                                     <outlet property="tweetContent" destination="7We-FT-Hj2" id="oCD-DQ-bqd"/>
                                     <outlet property="userNameLabel" destination="4dg-zg-8T7" id="x2l-7j-hr9"/>
                                 </connections>
@@ -189,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJM-n0-2Py" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="1069"/>
+            <point key="canvasLocation" x="1858" y="1069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cQG-j5-BPz">
@@ -228,7 +236,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XK-tZ-MGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="1069"/>
+            <point key="canvasLocation" x="1080" y="1069"/>
         </scene>
     </scenes>
     <resources>
